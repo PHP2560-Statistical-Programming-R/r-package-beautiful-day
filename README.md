@@ -1,5 +1,5 @@
 # ENVHTH PACKAGE 
-Author: Annie Yang   Yiquan Xu
+Authors: Annie Yang   Yiquan Xu
 
 ## THE IDEA OF OUR PACKAGE
 
@@ -14,33 +14,38 @@ Health status classification.
 ## DATA AND INFORMATION RESOURCE
 
 [OECD Data](https://data.oecd.org/environment.htm)
+
 [EPA](https://aqsdr1.epa.gov/aqsweb/aqstmp/airdata/download_files.html)
+
 [Environmental Dataset Gateway](https://edg.epa.gov/metadata/catalog/main/home.page)
+
 [Berkeleyearth](http://berkeleyearth.org/)
+
 [Healthdata.gov](https://www.healthdata.gov/search/type/dataset)
 
-##FUNCTIONS IN THE PACKAGE
+## FUNCTIONS IN THE PACKAGE
 
 ### 1.INCLUDING DATASETS
 
 Include example datasets in R package.
+
 The datasets may include air, water, climate and health data.
 
 ### 2.MANIPULATION
 
 Create functions to manipulate different kinds of pollution data.
+
 Deal with missing value… to make the raw data in a good shape to work on.
+
 The function can take the variable (country/state/city/CO/NO2) and slice the data into different interesting subset.
+
 Take the raw data and return a data frame.
 
 ### 3.SUMMARY STATISTICS
 
 Return the mean, standard deviation, max, min, range, skewness, kurtosis of interested variables.
 
-Calculate covariance and correlation coefficient: If we want to know the correlation
-between different type of environment data, such as we want to get the correlation
-between the area of forest and the air pollution, the function can return
-covariance and correlation coefficient.
+Calculate covariance and correlation coefficient: If we want to know the correlation between different type of environment data, such as we want to get the correlation between the area of forest and the air pollution, the function can return covariance and correlation coefficient.
 
 ### 4.BOX PLOT
 
@@ -54,8 +59,7 @@ For example, we can calculate the average temperature in the state and plot the 
 
 Plot histogram mean (or other interested statistic) of pollutants and do the comparison between countries/state/city.
 
-### 7.HEALTH STATUS CLASSIFICATION 
-###- PEOPLE CAN USE THIS FUNCTION TO GET A SENSE OF THEIR HEALTH STATUS.
+### 7.HEALTH STATUS CLASSIFICATION - PEOPLE CAN USE THIS FUNCTION TO GET A SENSE OF THEIR HEALTH STATUS.
 
 •	Search the criteria to classify the level of pollution such as “polluted”, “mildly polluted” and “not polluted”.
 
@@ -69,10 +73,12 @@ Plot histogram mean (or other interested statistic) of pollutants and do the com
 
 •	Note: We may set more categories according to the real situation.
 
-##TEAM WORK
+## TEAM WORK
 
 Annie Yang: data visualization - function 4, 5, 6
+
 Yiquan Xu: statistical computation and classification - function 3, 7 
+
 Annie Yang and Yiquan Xu: Data collection and manipulation - function 1,2
 
 
