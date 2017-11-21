@@ -1,5 +1,5 @@
 # ENVHTH PACKAGE 
-Authors: Annie Yang   Yiquan Xu
+Authors: Annie Yang; Yiquan Xu
 
 ## THE IDEA OF OUR PACKAGE
 
