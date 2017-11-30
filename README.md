@@ -1,4 +1,4 @@
-# ENVHTH PACKAGE 
+# ENVPH PACKAGE 
 Authors: Annie Yang; Yiquan Xu
 
 ## THE IDEA OF OUR PACKAGE
