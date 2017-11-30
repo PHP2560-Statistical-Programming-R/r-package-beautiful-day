@@ -4,19 +4,19 @@
 \alias{airquality}
 \title{Extract data from pollution_us}
 \usage{
-airquality(data = pollution_us, pollutant, state, start, end)
+airquality(data = pollution_us, state, start, end, pollutant)
 }
 \arguments{
 \item{data}{a data.frame}
-
-\item{pollutant}{type of pollutant (e.g. NO2, O3, SO2, CO)}
 
 \item{state}{state name in US}
 
 \item{start}{start date}
 
 \item{end}{end date}
+
+\item{pollutant}{type of pollutant (e.g. NO2, O3, SO2, CO)}
 }
 \description{
-This function help you extract data needed.
+This function help you extract data based on state, date and pollutant.
 }
