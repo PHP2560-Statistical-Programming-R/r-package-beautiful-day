@@ -7,10 +7,13 @@
 trend_aqi(data = pollution_us, city)
 }
 \arguments{
-\item{data}{a data.frame}
+\item{data}{A data.frame}
 
 \item{city}{US city name}
 }
 \description{
 This function plots NO2, O3, SO2 and AQI trend in US city since 2000
+}
+\examples{
+trend_aqi(pollution_us, "Phoenix")
 }
