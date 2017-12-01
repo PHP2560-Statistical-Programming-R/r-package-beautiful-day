@@ -2,15 +2,15 @@
 % Please edit documentation in R/stat.R
 \name{stat_func}
 \alias{stat_func}
-\title{Gather statistical data from annual_aqi_by_cbsa}
+\title{Calculate summary statistics for AQI}
 \usage{
-stat_func(data = annual_aqi_by_cbsa, cbsa)
+stat_func(data = annual_aqi, cbsa)
 }
 \arguments{
-\item{data}{a data.frame}
+\item{data}{A data.frame}
 
-\item{cbsa}{cbsa in US}
+\item{cbsa}{CBSA in US}
 }
 \description{
-This function helps you get the statistical data from annual_aqi_by_cbsa
+This function helps you calculate summary statistics for AQI by CBSA.
 }

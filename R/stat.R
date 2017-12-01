@@ -1,8 +1,8 @@
-#' @title Gather statistical data from annual_aqi_by_cbsa
+#' @title Calculate summary statistics for AQI
 #'
-#' @description This function helps you get the statistical data from annual_aqi_by_cbsa
-#' @param data a data.frame
-#' @param cbsa cbsa in US
+#' @description This function helps you calculate summary statistics for AQI by CBSA.
+#' @param data A data.frame
+#' @param cbsa CBSA in US
 #' @seealso
 #' @ruturn
 #' @examples
