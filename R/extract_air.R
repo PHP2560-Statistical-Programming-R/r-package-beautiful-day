@@ -11,10 +11,12 @@
 #' @examples
 
 airquality<-function(data=pollution_us, state, start, end, pollutant) {
-  data$`Date Local`<-as.Date(data$`Date Local`) # convert from character to "Date" representing calendar dates
+  data$'Date Local'<-as.Date(data$'Date Local') 
+  # convert from character to "Date" representing calendar dates
+  
   extract<-data%>%
     select("X1", "State Code", "County Code", "Site Num", "Address", "State", "County", "City", "Date Local",starts_with(pollutant))%>%
-    filter(State==state & `Date Local`>=start & `Date Local`<=end)
+    filter(State==state & 'Date Local'>=start & 'Date Local'<=end)
+  
   return(extract)
   }
-
