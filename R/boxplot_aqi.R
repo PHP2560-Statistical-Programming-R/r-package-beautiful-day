@@ -1,6 +1,7 @@
 #' @title Make the boxplot of AQI
 #'
 #' @description This function helps you make boxplots of AQI in the year you are interested. And also mark the point of the CBSA you are interested.
+#'     So that you can know the AQI of the CBSA is relatively high or low compared to other geographic areas.
 #' @param data A data.frame. The default dataset is annual_aqi.
 #' @param start Start year
 #' @param end End year

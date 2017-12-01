@@ -17,6 +17,7 @@ boxplot_aqi(data = annual_aqi, start, end, cbsa)
 }
 \description{
 This function helps you make boxplots of AQI in the year you are interested. And also mark the point of the CBSA you are interested.
+    So that you can know the AQI of the CBSA is relatively high or low compared to other geographic areas.
 }
 \examples{
 boxplot_aqi(annual_aqi,"2000","2005","Albany, GA")
