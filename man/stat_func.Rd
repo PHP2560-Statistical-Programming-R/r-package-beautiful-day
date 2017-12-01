@@ -2,7 +2,7 @@
 % Please edit documentation in R/stat.R
 \name{stat_func}
 \alias{stat_func}
-\title{Extract data from pollution_us}
+\title{Gather statistical data from annual_aqi_by_cbsa}
 \usage{
 stat_func(data = annual_aqi_by_cbsa, cbsa)
 }
@@ -12,5 +12,5 @@ stat_func(data = annual_aqi_by_cbsa, cbsa)
 \item{cbsa}{cbsa in US}
 }
 \description{
-This function help you extract data based on state, date and pollutant.
+This function helps you get the statistical data from annual_aqi_by_cbsa
 }
