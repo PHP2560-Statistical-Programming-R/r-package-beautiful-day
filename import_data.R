@@ -9,3 +9,7 @@ load(file = "data/pollution_us.rda")
 # load the annual AQI data from 2000 to 2017 by Core Based Statistical Area (CBSA)
 
 load(file = "data/annual_aqi.rda")
+
+# load the AQI categories. Understand each category corresponds to a different level of health concern.
+
+load(file = "data/AQI.rda")
