@@ -1,6 +1,6 @@
-#' @title Extract data from pollution_us
+#' @title Gather statistical data from annual_aqi_by_cbsa
 #'
-#' @description This function help you extract data based on state, date and pollutant.
+#' @description This function helps you get the statistical data from annual_aqi_by_cbsa
 #' @param data a data.frame
 #' @param cbsa cbsa in US
 #' @seealso
