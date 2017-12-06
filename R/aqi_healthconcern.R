@@ -5,7 +5,7 @@
 #' @param data A data.frame. The default dataset is annual_aqi.
 #' @param cbsa A vector of CBSA. You can input the CBSAs you want to compare.
 #' @examples
-#' boxplot_aqi(annual_aqi,c("Aberdeen, SD","Adrian, MI"))
+#' aqi_healthconcern(annual_aqi,c("Aberdeen, SD","Adrian, MI"))
 
 aqi_healthconcern<-function(data=annual_aqi,cbsa){
   

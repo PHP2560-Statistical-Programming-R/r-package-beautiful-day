@@ -16,5 +16,5 @@ There are six categories of AQI. Each category corresponds to a different level 
     plots percentage of each category by CBSA. It can be used to compare AQI among different CBSAs.
 }
 \examples{
-boxplot_aqi(annual_aqi,c("Aberdeen, SD","Adrian, MI"))
+aqi_healthconcern(annual_aqi,c("Aberdeen, SD","Adrian, MI"))
 }
