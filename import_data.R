@@ -1,3 +1,20 @@
+
+# Install packages that the program need
+
+install_packages = function(names)
+{
+  for(name in names)
+  {
+    if (!(name %in% installed.packages()))
+      install.packages(name, repos="http://cran.us.r-project.org")
+    
+    library(name, character.only=TRUE)
+  }
+}
+
+install_packages(c("devtools","dplyr", "ggplot2","reshape2",
+                   "roxygen2","ggpubr", "readr", "rvest","XML", "testthat"))
+
 # Our functions are based on the following datasets.
 
 # load the rda file and import the air pollution data in US
