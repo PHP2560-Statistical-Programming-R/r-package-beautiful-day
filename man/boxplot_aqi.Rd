@@ -2,23 +2,22 @@
 % Please edit documentation in R/boxplot_aqi.R
 \name{boxplot_aqi}
 \alias{boxplot_aqi}
-\title{Make the boxplot of AQI}
+\title{Make the Boxplot of AQI}
 \usage{
-boxplot_aqi(data = annual_aqi, start, end, cbsa)
+boxplot_aqi(data = annual_aqi, year, cbsa)
 }
 \arguments{
 \item{data}{A data.frame. The default dataset is annual_aqi.}
 
-\item{start}{Start year}
-
-\item{end}{End year}
+\item{year}{A vector, years in which you want to display the distribution of AQI.}
 
 \item{cbsa}{A CBSA in US.}
 }
 \description{
 This function helps you make boxplots of AQI in the year you are interested. And also mark the point of the CBSA you are interested.
-    So that you can know the AQI of the CBSA is relatively high or low compared to other geographic areas.
+    So that you can know the AQI of the CBSA is relatively high or low compared to other geographic areas. You can make comparison of AQI in
+    different years by the notch. if two boxes' notches do not overlap there is ‘strong evidence’ (95% confidence) their medians differ.
 }
 \examples{
-boxplot_aqi(annual_aqi,"2000","2005","Albany, GA")
+boxplot_aqi(annual_aqi,c("2000","2005"),"Albany, GA")
 }
