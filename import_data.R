@@ -38,3 +38,4 @@ load(file = "data/AQI.rda")
 
 load(file = "data/GlobalTemperatures.rda")
 load(file = "data/GlobalLandTemperaturesByCountry.rda")
+load(file = "data/GlobalLandTemperaturesByState.rda")

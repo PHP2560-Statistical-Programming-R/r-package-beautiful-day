@@ -10,3 +10,8 @@ devtools::use_data(GlobalTemperatures, overwrite = TRUE)
 
 GlobalLandTemperaturesByCountry<- read_csv("data-raw/GlobalLandTemperaturesByCountry.csv")
 devtools::use_data(GlobalLandTemperaturesByCountry, overwrite = TRUE)
+
+# GlobalLandTemperaturesByState.csv contains data about Global Average Land Temperature by State.
+
+GlobalLandTemperaturesByState<- read_csv("data-raw/GlobalLandTemperaturesByState.csv")
+devtools::use_data(GlobalLandTemperaturesByState, overwrite = TRUE)
