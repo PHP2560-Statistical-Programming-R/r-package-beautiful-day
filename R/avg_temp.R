@@ -7,7 +7,7 @@
 #' @param year A vector. Time period during which you want to analyse how the temperature changed.
 #' @param month A vector. Time period during which you want to analyse how the temperature changed.
 #' @param country A vector of countries' name. Compare how the temperature changed in these countries during a specified time period.
-#' @param con Display confidence interval around smooth? (FALSE by default)
+#' @param con Display confidence interval around smooth? (TRUE for confidence interval. FALSE by default)
 #' @examples
 #' avg_temp(data=GlobalLandTemperaturesByCountry, type=c(1,2),
 #' year=c(2000:2015), month=c(1:12), 
@@ -40,7 +40,7 @@ avg_temp <- function(data, type, year, month, country, con = "FALSE"){
            y="Average Temperature")
     
     avg_temp_month<-glb_avg_temp %>%
-      filter(Month %in% month)%>%
+      filter(Year %in% year & Month %in% month)%>%
       ggplot(aes(x=dt, y=LandAverageTemperature,colour=reorder(Month.String,-LandAverageTemperature,mean)))+
       # Sort month from highest temperature to lowest temperature
       geom_smooth(method="loess",se=con)+
@@ -77,7 +77,7 @@ avg_temp <- function(data, type, year, month, country, con = "FALSE"){
            y="Average Temperature")
     
     avg_temp_month <- glb_avg_temp %>%
-      filter(Month %in% month)%>%
+      filter(Year %in% year & Month %in% month)%>%
       ggplot(aes(x=dt, y=AverageTemperature,colour=reorder(Month.String,-AverageTemperature,mean)))+
       geom_smooth(method="loess",se=con)+
       facet_wrap(~Country,scales="free_x")+
