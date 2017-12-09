@@ -6,6 +6,8 @@
 #' @seealso
 #' @ruturn
 #' @examples
+#' 
+#' @export
 
 
 

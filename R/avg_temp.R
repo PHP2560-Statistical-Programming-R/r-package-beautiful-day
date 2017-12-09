@@ -12,6 +12,8 @@
 #' avg_temp(data=GlobalLandTemperaturesByCountry, type=c(1,2),
 #' year=c(2000:2015), month=c(1:12), 
 #' country = c("Afghanistan","Andorra"),con="F")
+#' 
+#' @export
 
 # Load GlobalTemperatures or GlobalLandTemperaturesByCountry dataset before using this function
 

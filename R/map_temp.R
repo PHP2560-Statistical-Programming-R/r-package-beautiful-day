@@ -5,6 +5,8 @@
 #' @param year numeric
 #' @examples
 #' temp_state(year=2012)
+#' 
+#' @export
 
 # Loading Packages
 # library(choroplethr)

@@ -6,6 +6,8 @@
 #' @seealso
 #' @examples
 #' trend_aqi(pollution_us, "Phoenix")
+#' 
+#' @export
 
 trend_aqi <- function (data=pollution_us, city) {
   table<-data %>%

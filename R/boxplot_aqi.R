@@ -8,6 +8,8 @@
 #' @param cbsa A CBSA in US.
 #' @examples
 #' boxplot_aqi(annual_aqi,c("2000","2005"),"Albany, GA")
+#' 
+#' @export
 
 
 

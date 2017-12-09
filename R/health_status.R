@@ -9,6 +9,8 @@
 #' @seealso
 #' @ruturn
 #' @examples
+#' 
+#' @export
 
 
 
