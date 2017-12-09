@@ -20,4 +20,5 @@ This function helps you make boxplots of AQI in the year you are interested. And
 }
 \examples{
 boxplot_aqi(annual_aqi,c("2000","2005"),"Albany, GA")
+
 }

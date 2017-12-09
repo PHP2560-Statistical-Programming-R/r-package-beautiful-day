@@ -16,5 +16,5 @@ This function plots temperature geographic maps for States in USA in specific ye
 }
 \examples{
 temp_state(year=2012)
-select columns of interest
+
 }

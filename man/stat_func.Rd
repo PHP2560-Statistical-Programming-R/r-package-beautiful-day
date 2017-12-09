@@ -14,3 +14,6 @@ stat_func(data = annual_aqi, cbsa)
 \description{
 This function helps you calculate summary statistics for AQI by CBSA.
 }
+\examples{
+
+}

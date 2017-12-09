@@ -16,4 +16,5 @@ This function plots NO2, O3, SO2 and AQI trend in US city since 2000
 }
 \examples{
 trend_aqi(pollution_us, "Phoenix")
+
 }

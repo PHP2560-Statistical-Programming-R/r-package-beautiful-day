@@ -17,4 +17,5 @@ There are six categories of AQI. Each category corresponds to a different level 
 }
 \examples{
 aqi_healthconcern(annual_aqi,c("Aberdeen, SD","Adrian, MI"))
+
 }

@@ -21,3 +21,6 @@ health_status(data = annual_aqi_by_cbsa, cbsa, year, smoke = 1,
 \description{
 This function helps you to evaluate your health status
 }
+\examples{
+
+}

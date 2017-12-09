@@ -27,4 +27,5 @@ This function helps you analyse global as well as countries average temperatures
 avg_temp(data=GlobalLandTemperaturesByCountry, type=c(1,2),
 year=c(2000:2015), month=c(1:12), 
 country = c("Afghanistan","Andorra"),con="F")
+
 }
