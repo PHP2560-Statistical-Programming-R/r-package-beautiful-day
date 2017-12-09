@@ -25,11 +25,11 @@ avg_temp <- function(data, type, year, month, country, con = "FALSE"){
              Month.String=format(data$dt,"%B"), # Create string month (full name)
              Year=as.numeric(format(data$dt,"%Y")))%>% # Create new column year (4 digit)
       select(dt, Month, Month.String, Year, LandAverageTemperature, LandAverageTemperatureUncertainty)%>%
-      na.omit() %>% # Remove missing values
-      filter(Year %in% year & Month %in% month)
+      na.omit() # Remove missing values
     
     
     avg_temp_year<-glb_avg_temp %>% 
+      filter(Year %in% year)%>%
       group_by(Year) %>%
       summarise(AverageTemp=mean(LandAverageTemperature)) %>% # Calculate yearly average temperature
       ungroup()%>%
@@ -40,16 +40,17 @@ avg_temp <- function(data, type, year, month, country, con = "FALSE"){
            y="Average Temperature")
     
     avg_temp_month<-glb_avg_temp %>%
+      filter(Month %in% month)%>%
       ggplot(aes(x=dt, y=LandAverageTemperature,colour=reorder(Month.String,-LandAverageTemperature,mean)))+
       # Sort month from highest temperature to lowest temperature
       geom_smooth(method="loess",se=con)+
-      labs(title="Global Average Temperatures By month",
+      labs(title="Global Average Temperatures By Month",
            x="Year",
            y="Average Temperature",
            colour="Month")
     
     if(identical(type,c(1,2))){
-      ggarrange(avg_temp_year,avg_temp_month,ncol=2,nrow=1)
+      ggpubr::ggarrange(avg_temp_year,avg_temp_month,ncol=2,nrow=1)
     } else if(type==1) {
       avg_temp_year
     } else {
@@ -62,9 +63,10 @@ avg_temp <- function(data, type, year, month, country, con = "FALSE"){
              Year=as.numeric(format(data$dt,"%Y")))%>% # Create new columns month and year
       select(dt, Month, Month.String, Year, Country, AverageTemperature, AverageTemperatureUncertainty)%>%
       na.omit() %>% # Remove missing values
-      filter(Year %in% year & Month %in% month & Country %in% country)
+      filter(Country %in% country)
     
     avg_temp_year <- glb_avg_temp %>% 
+      filter(Year %in% year)%>%
       group_by(Year, Country) %>%
       summarise(AverageTemp=mean(AverageTemperature)) %>% # Calculate yearly average temperature by country
       ungroup()%>%
@@ -75,6 +77,7 @@ avg_temp <- function(data, type, year, month, country, con = "FALSE"){
            y="Average Temperature")
     
     avg_temp_month <- glb_avg_temp %>%
+      filter(Month %in% month)%>%
       ggplot(aes(x=dt, y=AverageTemperature,colour=reorder(Month.String,-AverageTemperature,mean)))+
       geom_smooth(method="loess",se=con)+
       facet_wrap(~Country,scales="free_x")+
@@ -84,7 +87,7 @@ avg_temp <- function(data, type, year, month, country, con = "FALSE"){
            colour="Month")
     
     if(identical(type,c(1,2))){
-      ggarrange(avg_temp_year,avg_temp_month)
+      ggpubr::ggarrange(avg_temp_year,avg_temp_month)
     } else if(type==1) {
       avg_temp_year
     } else {
