@@ -1,4 +1,4 @@
-#' @title Plot temperature geographic maps for States in USA
+#' @title Plot Temperature Geographic Maps by States in USA
 #'
 #' @description This function plots temperature geographic maps for States in USA in specific year
 #' @param data A data.frame. The defalt dataset is GlobalLandTemperaturesByState.
@@ -47,15 +47,21 @@ print(state_choropleth(map_state,
                        legend = "Degrees"),reference_map=TRUE)
 }
 
-#' @title Plot temperature geographic maps for countries
+#' @title Plot Temperature Geographic Maps by Country
 #'
-#' @description This function plots temperature geographic maps for countries in specific year
+#' @description This function plots temperature geographic maps for countries in specific year. You can use this
+#'     function to get a temperature geographic map showing the temperature change from the start year to end year.
 #' @param data A data.frame. The defalt dataset is GlobalLandTemperaturesByCountry.
-#' @param year numeric
+#' @param year A numeric. You can get temperature geographic maps for countries in this year.
+#' @param start A numeric. The start year you want to do temperature comparison.
+#' @param end A numeric. Then end year you want to do temperature comparison.
+#' @param diff A character. If diff=="TRUE", you will get a temperature geographic map showing the temperature
+#'     change from the start year to end year. (Default value is "FALSE")
 #' @examples
 #' temp_country(year=2012)
+#' temp_country(start=1990,end=2000,diff="TRUE")
 
-temp_country<-function(data=GlobalLandTemperaturesByCountry, year){
+temp_country<-function(data=GlobalLandTemperaturesByCountry, year, start, end, diff="FALSE"){
   # light grey boundaries
   l <- list(color = toRGB("grey"), width = 0.5)
   
@@ -65,7 +71,7 @@ temp_country<-function(data=GlobalLandTemperaturesByCountry, year){
     showcoastlines = FALSE,
     projection = list(type = 'Mercator')
   )
-  
+ 
   map_country <- data %>%
     mutate(Month=as.numeric(format(data$dt,"%m")), # Create new column month (decimal number)
            Month.String=format(data$dt,"%B"), # Create string month (full name)
@@ -75,15 +81,16 @@ temp_country<-function(data=GlobalLandTemperaturesByCountry, year){
     group_by(Year, Country) %>%
     summarise(AvgTemp=mean(AverageTemperature))
   
-  code<-countrycode(map_country$Country,'country.name', 'iso3c')
+  code<-countrycode(map_country$Country,'country.name', 'iso3c') # Converts long country name into country codes
   
-  map_country$CODE<-code
+  map_country$CODE<-code # Create new column in map_country named "CODE"
   
+  if(diff=="FALSE"){
   temp<-map_country%>%filter(Year==year)
   
   map_temp <- plot_geo(temp) %>%
     add_trace(
-      z = ~AvgTemp, color = ~AvgTemp, colors = 'Blues',
+      z = ~AvgTemp, color = ~AvgTemp, colors = 'Reds',
       text = ~Country, locations = ~CODE, marker = list(line = l)
     ) %>%
     colorbar(title = 'Temperature') %>%
@@ -93,4 +100,25 @@ temp_country<-function(data=GlobalLandTemperaturesByCountry, year){
     )
   
   map_temp
+  } else if (diff=="TRUE") {
+    
+    temp_diff<-map_country %>% 
+      filter(Year==start | Year==end) %>% 
+      tidyr::spread(Year, AvgTemp)
+    
+    temp_diff$Difference<-unlist(temp_diff[,4]-temp_diff[,3]) # Calculate temperature variation from start year to end year
+    
+    map_temp <- plot_geo(temp_diff) %>%
+      add_trace(
+        z = ~Difference, color = ~Difference, colors = 'Reds',
+        text = ~Country, locations = ~CODE, marker = list(line = l)
+      ) %>%
+      colorbar(title = 'Temperature Variation') %>%
+      layout(
+        title = paste(start,"-",end,"Temperature Variation Map", sep=" "),
+        geo = g
+      )
+    print(map_temp)
+  }
+  
 }

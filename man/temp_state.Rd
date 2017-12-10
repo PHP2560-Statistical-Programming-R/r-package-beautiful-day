@@ -2,7 +2,7 @@
 % Please edit documentation in R/map_temp.R
 \name{temp_state}
 \alias{temp_state}
-\title{Plot temperature geographic maps for States in USA}
+\title{Plot Temperature Geographic Maps by States in USA}
 \usage{
 temp_state(data = GlobalLandTemperaturesByState, year)
 }

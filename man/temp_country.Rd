@@ -2,18 +2,28 @@
 % Please edit documentation in R/map_temp.R
 \name{temp_country}
 \alias{temp_country}
-\title{Plot temperature geographic maps for countries}
+\title{Plot Temperature Geographic Maps by Country}
 \usage{
-temp_country(data = GlobalLandTemperaturesByCountry, year)
+temp_country(data = GlobalLandTemperaturesByCountry, year, start, end,
+  diff = "FALSE")
 }
 \arguments{
 \item{data}{A data.frame. The defalt dataset is GlobalLandTemperaturesByCountry.}
 
-\item{year}{numeric}
+\item{year}{A numeric. You can get temperature geographic maps for countries in this year.}
+
+\item{start}{A numeric. The start year you want to do temperature comparison.}
+
+\item{end}{A numeric. Then end year you want to do temperature comparison.}
+
+\item{diff}{A character. If diff=="TRUE", you will get a temperature geographic map showing the temperature
+change from the start year to end year. (Default value is "FALSE")}
 }
 \description{
-This function plots temperature geographic maps for countries in specific year
+This function plots temperature geographic maps for countries in specific year. You can use this
+    function to get a temperature geographic map showing the temperature change from the start year to end year.
 }
 \examples{
 temp_country(year=2012)
+temp_country(start=1990,end=2000,diff="TRUE")
 }
