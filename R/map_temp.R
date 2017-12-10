@@ -16,10 +16,10 @@
 
 temp_state<-function(data=GlobalLandTemperaturesByState,year){
   
-map <- GlobalLandTemperaturesByState %>%
-  mutate(Month=as.numeric(format(GlobalLandTemperaturesByState$dt,"%m")), # Create new column month (decimal number)
-         Month.String=format(GlobalLandTemperaturesByState$dt,"%B"), # Create string month (full name)
-         Year=as.numeric(format(GlobalLandTemperaturesByState$dt,"%Y"))) %>% # Create new column year (4 digit)
+map <- data %>%
+  mutate(Month=as.numeric(format(data$dt,"%m")), # Create new column month (decimal number)
+         Month.String=format(data$dt,"%B"), # Create string month (full name)
+         Year=as.numeric(format(data$dt,"%Y"))) %>% # Create new column year (4 digit)
   na.omit() %>% filter(Country=="United States")
 
 map$State <- as.character(map$State)  

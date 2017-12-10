@@ -17,7 +17,7 @@ avg_temp(data, type, year, month, country, con = "FALSE")
 
 \item{country}{A vector of countries' name. Compare how the temperature changed in these countries during a specified time period.}
 
-\item{con}{Display confidence interval around smooth? (FALSE by default)}
+\item{con}{Display confidence interval around smooth? (TRUE for confidence interval. FALSE by default)}
 }
 \description{
 This function helps you analyse global as well as countries average temperatures trend during a specified time period. 
