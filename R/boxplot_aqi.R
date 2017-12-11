@@ -21,19 +21,20 @@ interested_cbsa<-data%>%filter(CBSA==cbsa & Year %in% year)
 
 box_data<-data%>%filter(Year %in% year)
 
-ggplot(box_data,aes(x=as.factor(Year), y=MedianAQI, fill=Year))+
-  geom_boxplot(alpha=0.3,
+ggplot(box_data,aes(x=as.factor(Year), y=MedianAQI, fill=as.factor(Year)))+
+  geom_boxplot(alpha=0.2,
                # Does the midian of AQI differ? 
                # if two boxes' notches do not overlap there is ‘strong evidence’ (95% confidence) their medians differ.
                notch=TRUE,
                notchwidth = 0.5,
                
-               outlier.colour="green",
-               outlier.fill="green",
+               outlier.colour="blue",
+               outlier.fill="blue",
                outlier.size=2
                )+
   geom_point(data=interested_cbsa,
              aes(x=as.factor(Year), y=MedianAQI),
              color="red", size=2)+
-  labs(x= "Year")
+  labs(x= "Year")+
+  theme(legend.position="none")
 }
