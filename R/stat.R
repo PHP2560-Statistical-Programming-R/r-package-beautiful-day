@@ -5,10 +5,11 @@
 #' @param cbsa CBSA in US
 #' @seealso
 #' @ruturn
-#' @examples
+#' @examples stat_func(cbsa="Ames, IA")
 #' 
 #' @export
-
+#' Loading packages
+#' library(dplyr)
 
 
 stat_func<-function(data=annual_aqi,cbsa){
