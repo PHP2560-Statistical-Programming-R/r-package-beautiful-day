@@ -4,13 +4,15 @@
 \alias{health_status}
 \title{Check your health status}
 \usage{
-health_status(data = annual_aqi_by_cbsa, cbsa, year, smoke = 1,
-  exercise = 1, gene = 1)
+health_status(data = annual_aqi, cbsa, year, smoke = 1, exercise = 1,
+  gene = 1)
 }
 \arguments{
 \item{data}{a data.frame}
 
 \item{cbsa}{cbsa in US}
+
+\item{year}{A numeric vector}
 
 \item{smoke}{whether people smoke or not, equal to -1 if you smoke, else is 1. Default is 1}
 

@@ -4,18 +4,30 @@
 \alias{aqi_healthconcern}
 \title{Compare AQI category percentage by CBSA}
 \usage{
-aqi_healthconcern(data = annual_aqi, cbsa)
+aqi_healthconcern(data = annual_aqi, cbsa, category = c("Good", "Moderate",
+  "UnhealthyForSensitiveGroup", "Unhealthy", "VeryUnhealthy", "Hazardous"),
+  year = c(2000:2015), plot = "line")
 }
 \arguments{
 \item{data}{A data.frame. The default dataset is annual_aqi.}
 
 \item{cbsa}{A vector of CBSA. You can input the CBSAs you want to compare.}
+
+\item{category}{A character vector of health concern category by AQI. There are six categories.
+Input category from "Good", "Moderate", "UnhealthyForSensitiveGroup", "Unhealthy", "VeryUnhealthy" and "Hazardous".
+Default value includes all six categories.}
+
+\item{year}{A numeric vector.}
+
+\item{plot}{A character. The value is either "line" or "bar".
+Default value is "line". You can use it to decide which kind of plot you want to get.}
 }
 \description{
 There are six categories of AQI. Each category corresponds to a different level of health concern. This function
     plots percentage of each category by CBSA. It can be used to compare AQI among different CBSAs.
 }
 \examples{
-aqi_healthconcern(annual_aqi,c("Aberdeen, SD","Adrian, MI"))
+aqi_healthconcern(annual_aqi,c("Aberdeen, SD","Adrian, MI"),
+category =c("Good","Moderate","Unhealthy"),year=c(2000,2008,2015),plot="bar")
 
 }

@@ -15,5 +15,6 @@ stat_func(data = annual_aqi, cbsa)
 This function helps you calculate summary statistics for AQI by CBSA.
 }
 \examples{
+stat_func(cbsa="Ames, IA")
 
 }
