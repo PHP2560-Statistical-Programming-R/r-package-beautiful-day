@@ -1,3 +1,12 @@
+#' @title Check and plot air quality by state
+#'
+#' @description 
+#' @param data A data.frame. The default dataset is AirQuality_Tracking.
+#' @param year A numeric vector.
+#' @examples
+#' checkAirQuality(year=2010)
+#'
+#' @export
 checkAirQuality <- function(data = AirQuality_Tracking, year){
   map <- data%>%
     filter(Value<=1000 & Unit != "%" & ReportYear == year)%>%
@@ -23,3 +32,4 @@ checkAirQuality <- function(data = AirQuality_Tracking, year){
       geo = g)
   print(map_state)
 }
+
