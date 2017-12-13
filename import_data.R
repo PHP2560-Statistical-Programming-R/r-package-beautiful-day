@@ -14,7 +14,7 @@ install_packages = function(names)
 
 install_packages(c("devtools","dplyr", "ggplot2","reshape2",
                    "roxygen2","ggpubr", "readr", "rvest","XML", "testthat",
-                   "choroplethr","choroplethrMaps","plotly","countrycode"))
+                   "choroplethr","choroplethrMaps","plotly","countrycode","Rmisc"))
 
 # Our functions are based on the following datasets.
 
