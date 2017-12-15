@@ -3,20 +3,19 @@
 #' @description This function helps you to evaluate your health status
 #' @param data a data.frame
 #' @param cbsa cbsa in US
-#' @param year A numeric vector
+#' @param year A numeric vector. Time period during which you want to analyse the air quality.
 #' @param smoke whether people smoke or not, equal to -1 if you smoke, else is 1. Default is 1
 #' @param exercise whether people has certain exercise every day, equal to -1 if you don't, else is 1. Default is 1
 #' @param gene whether people has certain gene may cause disease happen,equal to -1 for bad gene or 1 for good gene. Default is 1
-#' @seealso
-#' @ruturn
-#' @examples
+#' @return
+#' @examples health_status(cbsa = "Ames, IA", year = 2008)
 #'
 #' @export
-
+#' library(dplyr)
 
 
 health_status<-function(data=annual_aqi, cbsa, year, smoke=1, exercise=1, gene=1){
-  env_status=0
+  env_status=0 #set initial value to 0
   health_data <- data%>%filter(CBSA %in% cbsa & Year %in% year)
   names(health_data)[13] <- "MedianAQI"
   if(mean(health_data$MedianAQI)>=0&mean(health_data$MedianAQI)<=50){
