@@ -1,10 +1,9 @@
 #' @title Calculate summary statistics for AQI
 #'
 #' @description This function helps you calculate summary statistics for AQI by CBSA.
-#' @param data A data.frame
-#' @param cbsa CBSA in US
-#' @seealso
-#' @ruturn
+#' @param data A data.frame. The data is about the annual air quality index and other pollutants.
+#' @param cbsa CBSA in US.
+#' @return
 #' @examples stat_func(cbsa="Ames, IA")
 #' 
 #' @export
