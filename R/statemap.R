@@ -14,7 +14,7 @@ checkAirQuality <- function(data = AirQuality_Tracking, year){
   map <- data%>%
     filter(Value<=1000 & Unit != "%" & ReportYear == year)%>%
     group_by(StateName)%>%
-    summarise(AirQuality = mean(Value))
+    dplyr::summarise(AirQuality = mean(Value))
   code <- state.abb[match((map$StateName),state.name)] #convert long state name to abbreviation
   code <- as.factor(code)
   map$CODE <- code
