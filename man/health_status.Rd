@@ -12,7 +12,7 @@ health_status(data = annual_aqi, cbsa, year, smoke = 1, exercise = 1,
 
 \item{cbsa}{cbsa in US}
 
-\item{year}{A numeric vector}
+\item{year}{A numeric vector. Time period during which you want to analyse the air quality.}
 
 \item{smoke}{whether people smoke or not, equal to -1 if you smoke, else is 1. Default is 1}
 
@@ -24,5 +24,6 @@ health_status(data = annual_aqi, cbsa, year, smoke = 1, exercise = 1,
 This function helps you to evaluate your health status
 }
 \examples{
+health_status(cbsa = "Ames, IA", year = 2008)
 
 }

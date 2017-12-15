@@ -9,7 +9,7 @@ checkAirQuality(data = AirQuality_Tracking, year)
 \arguments{
 \item{data}{A data.frame. The default dataset is AirQuality_Tracking.}
 
-\item{year}{A numeric vector.}
+\item{year}{A numeric vector. The report year of the air quality data.}
 }
 \description{
 This function gets the data from CDC, the outcome is a combination outcome of
