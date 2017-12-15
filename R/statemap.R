@@ -3,11 +3,13 @@
 #' @description This function gets the data from CDC, the outcome is a combination outcome of
 #' monitoring ozone and PM2.5.
 #' @param data A data.frame. The default dataset is AirQuality_Tracking.
-#' @param year A numeric vector.
+#' @param year A numeric vector. The report year of the air quality data.
 #' @examples
 #' checkAirQuality(year=2010)
 #'
 #' @export
+#' library(dplyr)
+#' library(plotly)
 checkAirQuality <- function(data = AirQuality_Tracking, year){
   map <- data%>%
     filter(Value<=1000 & Unit != "%" & ReportYear == year)%>%
