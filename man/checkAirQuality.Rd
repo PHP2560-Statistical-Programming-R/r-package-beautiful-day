@@ -11,6 +11,10 @@ checkAirQuality(data = AirQuality_Tracking, year)
 
 \item{year}{A numeric vector.}
 }
+\description{
+This function gets the data from CDC, the outcome is a combination outcome of
+monitoring ozone and PM2.5.
+}
 \examples{
 checkAirQuality(year=2010)
 
