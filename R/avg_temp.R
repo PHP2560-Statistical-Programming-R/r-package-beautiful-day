@@ -1,23 +1,24 @@
 #' @title Average Temperatures Trend
 #'
 #' @description This function helps you analyse global as well as countries average temperatures trend during a specified time period. 
-#'     You can use it to do comparison between countries.
-#' @param data A data.frame. Use GlobalTemperatures or GlobalLandTemperaturesByCountry dataset to do analysis.
+#'     You can use it to do comparison between countries. Also, you can analyse both yearly average temperature and monthly temperature trend.
+#' @param data Dataset to use for plot. Use GlobalTemperatures or GlobalLandTemperaturesByCountry dataset to do analysis.
 #' @param type A vector giving which type of trend you want to plot. 1 indicates yearly trend. 2 indicates monthly trend. c(1,2) indicates both yearly and monthly average temperature trend.
 #' @param year A vector. Time period during which you want to analyse how the temperature changed.
-#' @param month A vector. Time period during which you want to analyse how the temperature changed.
+#' @param month A vector. You want to analyse the temperature trend in these months.
 #' @param country A vector of countries' name. Compare how the temperature changed in these countries during a specified time period.
 #' @param con Display confidence interval around smooth? (TRUE for confidence interval. FALSE by default)
 #' @examples
 #' avg_temp(data=GlobalLandTemperaturesByCountry, type=c(1,2),
-#' year=c(2000:2015), month=c(1:12), 
-#' country = c("Afghanistan","Andorra"),con="F")
+#' year=c(2000:2015), month=3, 
+#' country = c("Afghanistan","Andorra"),con="T")
+#' avg_temp(data=GlobalTemperatures, type=c(1,2),year=c(2000:2013),month=c(1:12))
 #' 
 #' @export
 
 # Load GlobalTemperatures or GlobalLandTemperaturesByCountry dataset before using this function
 
-avg_temp <- function(data, type, year, month, country, con = "FALSE"){
+avg_temp <- function(data=GlobalTemperatures, type, year, month, country, con = "FALSE"){
   
   if(missing(country)){ # when data=GlobalTemperatures, the country argument is missing
     glb_avg_temp <- data %>% 
@@ -30,7 +31,7 @@ avg_temp <- function(data, type, year, month, country, con = "FALSE"){
     
     avg_temp_year<-glb_avg_temp %>% 
       filter(Year %in% year)%>%
-      group_by(Year) %>%
+      dplyr::group_by(Year) %>%
       dplyr::summarise(AverageTemp=mean(LandAverageTemperature)) %>% # Calculate yearly average temperature
       ungroup()%>%
       ggplot(aes(x = Year, y = AverageTemp)) +
@@ -67,7 +68,7 @@ avg_temp <- function(data, type, year, month, country, con = "FALSE"){
     
     avg_temp_year <- glb_avg_temp %>% 
       filter(Year %in% year)%>%
-      group_by(Year, Country) %>%
+      dplyr::group_by(Year, Country) %>%
       dplyr::summarise(AverageTemp=mean(AverageTemperature)) %>% # Calculate yearly average temperature by country
       ungroup()%>%
       ggplot(aes(x = Year, y = AverageTemp,colour=Country)) +
@@ -87,8 +88,8 @@ avg_temp <- function(data, type, year, month, country, con = "FALSE"){
            colour="Month")
     
     if(identical(type,c(1,2))){
-      ggpubr::ggarrange(avg_temp_year,avg_temp_month)
-    } else if(type==1) {
+      ggpubr::ggarrange(avg_temp_year,avg_temp_month) # Combine yearly temperature trend 
+    } else if(type==1) {                              # and monthly temperature trend graphs
       avg_temp_year
     } else {
       avg_temp_month

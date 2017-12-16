@@ -1,18 +1,12 @@
-#' @title Plot Temperature Geographic Maps by States in USA
+#' @title Plot Temperature Geographic Maps by States in US
 #'
-#' @description This function plots temperature geographic maps for States in USA in specific year
-#' @param data A data.frame. The defalt dataset is GlobalLandTemperaturesByState.
-#' @param year numeric
+#' @description This function plots temperature geographic maps for States in US in specific year
+#' @param data Dataset to use for map. The defalt dataset is GlobalLandTemperaturesByState.
+#' @param year A numeric. The map will show you the temperature in specific year.
 #' @examples
 #' temp_state(year=2012)
 #' 
 #' @export
-
-# Loading Packages
-# library(choroplethr)
-# library(choroplethrMaps)
-# library(plotly)
-# library(countrycode)
 
 temp_state<-function(data=GlobalLandTemperaturesByState,year){
   
@@ -29,7 +23,7 @@ map$State<- as.factor(map$State)
 #' select columns of interest
 map_select <- map %>% 
   select(Year,AverageTemperature,State) %>%
-  group_by(Year, State) %>%
+  dplyr::group_by(Year, State) %>%
   dplyr::summarise(value=mean(AverageTemperature))
 
 #Data frame must have a column named region (all lower case) and another one value.
@@ -50,8 +44,8 @@ print(state_choropleth(map_state,
 #' @title Plot Temperature Geographic Maps by Country
 #'
 #' @description This function plots temperature geographic maps for countries in specific year. You can use this
-#'     function to get a temperature geographic map showing the temperature change from the start year to end year.
-#' @param data A data.frame. The defalt dataset is GlobalLandTemperaturesByCountry.
+#'     function to get a temperature geographic map showing the temperature variation during a specific time period.
+#' @param data Dataset to use for map. The defalt dataset is GlobalLandTemperaturesByCountry.
 #' @param year A numeric. You can get temperature geographic maps for countries in this year.
 #' @param start A numeric. The start year you want to do temperature comparison.
 #' @param end A numeric. Then end year you want to do temperature comparison.
@@ -78,7 +72,7 @@ temp_country<-function(data=GlobalLandTemperaturesByCountry, year, start, end, d
            Year=as.numeric(format(data$dt,"%Y"))) %>% # Create new column year (4 digit)
     na.omit()%>%
     select(Year,AverageTemperature,Country) %>%
-    group_by(Year, Country) %>%
+    dplyr::group_by(Year, Country) %>%
     dplyr::summarise(AvgTemp=mean(AverageTemperature))
   
   code<-countrycode(map_country$Country,'country.name', 'iso3c') # Converts long country name into country codes

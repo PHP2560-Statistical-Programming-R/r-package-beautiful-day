@@ -1,12 +1,10 @@
 #' @title Plot AQI trend
 #'
 #' @description This function plots NO2, O3, SO2 and AQI trend in US city since 2000
-#' @param data A data.frame
-#' @param city US city name
-#' @seealso
+#' @param data Dataset to use for plot. The default dataset is pollution_us.
+#' @param city A character. A US city name.
 #' @examples
 #' trend_aqi(pollution_us, "Phoenix")
-#' 
 #' @export
 
 trend_aqi <- function (data=pollution_us, city) {

@@ -1,18 +1,16 @@
 #' @title Check your health status
 #'
 #' @description This function helps you to evaluate your health status
-#' @param data a data.frame
-#' @param cbsa cbsa in US
-#' @param year A numeric vector. Time period during which you want to analyse the air quality.
-#' @param smoke whether people smoke or not, equal to -1 if you smoke, else is 1. Default is 1
-#' @param exercise whether people has certain exercise every day, equal to -1 if you don't, else is 1. Default is 1
-#' @param gene whether people has certain gene may cause disease happen,equal to -1 for bad gene or 1 for good gene. Default is 1
-#' @return
+#' @param data Dataset to use for analysing health status.
+#' @param cbsa A CBSA in US.
+#' @param year A numeric. Year in which you want to analyse the air quality.
+#' @param smoke Whether people smoke or not, equal to -1 if you smoke, else is 1. Default is 1.
+#' @param exercise Whether people has certain exercise every day, equal to -1 if you don't, else is 1. Default is 1.
+#' @param gene Whether people has certain gene may cause disease happen,equal to -1 for bad gene or 1 for good gene. Default is 1.
 #' @examples 
 #' health_status(cbsa = "Ames, IA", year = 2008)
 #'
 #' @export
-#' library(dplyr)
 
 
 health_status<-function(data=annual_aqi, cbsa, year, smoke=1, exercise=1, gene=1){

@@ -3,10 +3,9 @@
 #' @description This function helps you tidy environment dataset, deal with the dates information, converts dates
 #'     to Date class and create new column "Month" and "Year" to help you analyse the data.The column names are 
 #'     with only lowercase letters, with "_" as a separator.
-#' @examples
-#' @param data a data.frame
-#' @param date a character. It is the column name of the data and this column containing dates information.
-#' @param na a character, either "F" or "T". The default value is "F". If the na=="F", it will remove rows with missing values.
+#' @param data Dataset you want to tidy.
+#' @param date A character. It is the column name of the dataset and this column containing dates information.
+#' @param na A character, either "F" or "T". The default value is "F". If the na=="F", it will remove rows with missing values.
 #' @return If na = "F", it will return a data frame without NA. The column names are with only lowercase letters, with "_" as a separator.
 #' @examples
 #' tidy_data(pollution_us, "Date Local")

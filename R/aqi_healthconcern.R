@@ -2,14 +2,14 @@
 #'
 #' @description There are six categories of AQI. Each category corresponds to a different level of health concern. This function
 #'     plots percentage of each category by CBSA. It can be used to compare AQI among different CBSAs.
-#' @param data A data.frame. The default dataset is annual_aqi.
+#' @param data Dataset to use for plot. The default dataset is annual_aqi.
 #' @param cbsa A vector of CBSA. You can input the CBSAs you want to compare.
 #' @param category A character vector of health concern category by AQI. There are six categories.
 #'     Input category from "Good", "Moderate", "UnhealthyForSensitiveGroup", "Unhealthy", "VeryUnhealthy" and "Hazardous".
 #'     Default value includes all six categories.
-#' @param year A numeric vector.
-#' @param plot A character. The value is either "line" or "bar".
-#'     Default value is "line". You can use it to decide which kind of plot you want to get.
+#' @param year A numeric vector. Default value is c(2000:2015).
+#' @param plot A character for type of plot. The value is either "line" or "bar". Default value is "line". 
+#'     You can use it to decide which kind of plot you want to get. When do analysis in some specific year, you should choose "bar".
 #' @examples
 #' aqi_healthconcern(annual_aqi,c("Aberdeen, SD","Adrian, MI"),
 #' category =c("Good","Moderate","Unhealthy"),year=c(2000,2008,2015),plot="bar")
