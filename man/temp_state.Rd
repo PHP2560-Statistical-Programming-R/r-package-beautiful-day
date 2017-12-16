@@ -18,3 +18,6 @@ This function plots temperature geographic maps for States in US in specific yea
 temp_state(year=2012)
 
 }
+\author{
+Annie Yang
+}

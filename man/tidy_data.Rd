@@ -25,3 +25,6 @@ This function helps you tidy environment dataset, deal with the dates informatio
 tidy_data(pollution_us, "Date Local")
 
 }
+\author{
+Annie Yang
+}

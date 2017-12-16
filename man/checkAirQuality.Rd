@@ -19,3 +19,6 @@ This function gets the data from CDC, the outcome is a combination outcome of
 checkAirQuality(year=2010)
 
 }
+\author{
+Yiquan Xu
+}

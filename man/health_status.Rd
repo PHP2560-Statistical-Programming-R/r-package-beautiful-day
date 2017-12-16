@@ -20,10 +20,16 @@ health_status(data = annual_aqi, cbsa, year, smoke = 1, exercise = 1,
 
 \item{gene}{Whether people has certain gene may cause disease happen,equal to -1 for bad gene or 1 for good gene. Default is 1.}
 }
+\value{
+Return which kind of health status you are in. Healthy, sub healthy or unhealthy?
+}
 \description{
 This function helps you to evaluate your health status
 }
 \examples{
 health_status(cbsa = "Ames, IA", year = 2008)
 
+}
+\author{
+Yiquan Xu
 }

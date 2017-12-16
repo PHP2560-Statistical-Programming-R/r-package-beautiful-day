@@ -27,3 +27,6 @@ This function plots temperature geographic maps for countries in specific year. 
 temp_country(year=2012)
 temp_country(start=1990,end=2000,diff="TRUE")
 }
+\author{
+Annie Yang
+}

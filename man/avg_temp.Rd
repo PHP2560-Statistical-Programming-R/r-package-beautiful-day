@@ -31,3 +31,6 @@ country = c("Afghanistan","Andorra"),con="T")
 avg_temp(data=GlobalTemperatures, type=c(1,2),year=c(2000:2013),month=c(1:12))
 
 }
+\author{
+Annie Yang
+}

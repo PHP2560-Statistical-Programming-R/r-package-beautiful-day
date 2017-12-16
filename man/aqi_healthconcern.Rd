@@ -31,3 +31,6 @@ aqi_healthconcern(annual_aqi,c("Aberdeen, SD","Adrian, MI"),
 category =c("Good","Moderate","Unhealthy"),year=c(2000,2008,2015),plot="bar")
 
 }
+\author{
+Annie Yang
+}

@@ -11,10 +11,14 @@ stat_func(data = annual_aqi, cbsa)
 
 \item{cbsa}{A CBSA in US.}
 }
+\value{
+Return a data frame containing statistic information: Min, first quartile, Median, Mean, third quartile, Max, 95% Confidence interval.
+}
 \description{
 This function helps you calculate summary statistics for AQI by CBSA.
 }
 \examples{
+Yiquan Xu
 stat_func(cbsa="Ames, IA")
 
 }
