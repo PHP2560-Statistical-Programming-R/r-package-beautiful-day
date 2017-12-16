@@ -11,7 +11,7 @@ Extract useful information (statistic) from the raw data.
 
 Visualize the environment data: horizontal comparison (among countries/states/cities) and vertical comparison (time series). Making AQI and Temperature Map.
 
-Take into environment factors and evaluate your health status.
+Consider environment factors and evaluate your health status.
 
 ## DATA AND INFORMATION RESOURCE
 
