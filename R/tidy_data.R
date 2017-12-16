@@ -7,6 +7,7 @@
 #' @param date A character. It is the column name of the dataset and this column containing dates information.
 #' @param na A character, either "F" or "T". The default value is "F". If the na=="F", it will remove rows with missing values.
 #' @return If na = "F", it will return a data frame without NA. The column names are with only lowercase letters, with "_" as a separator.
+#' @author Annie Yang
 #' @examples
 #' tidy_data(pollution_us, "Date Local")
 #' 

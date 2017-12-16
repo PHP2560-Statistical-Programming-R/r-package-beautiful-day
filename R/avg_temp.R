@@ -8,6 +8,7 @@
 #' @param month A vector. You want to analyse the temperature trend in these months.
 #' @param country A vector of countries' name. Compare how the temperature changed in these countries during a specified time period.
 #' @param con Display confidence interval around smooth? (TRUE for confidence interval. FALSE by default)
+#' @author Annie Yang 
 #' @examples
 #' avg_temp(data=GlobalLandTemperaturesByCountry, type=c(1,2),
 #' year=c(2000:2015), month=3, 
@@ -50,9 +51,9 @@ avg_temp <- function(data=GlobalTemperatures, type, year, month, country, con = 
            y="Average Temperature",
            colour="Month")
     
-    if(identical(type,c(1,2))){
-      ggpubr::ggarrange(avg_temp_year,avg_temp_month,ncol=2,nrow=1)
-    } else if(type==1) {
+    if(identical(type,c(1,2))){ 
+      ggpubr::ggarrange(avg_temp_year,avg_temp_month,ncol=2,nrow=1) # Combine yearly temperature trend 
+    } else if(type==1) {                                            # and monthly temperature trend graphs
       avg_temp_year
     } else {
       avg_temp_month

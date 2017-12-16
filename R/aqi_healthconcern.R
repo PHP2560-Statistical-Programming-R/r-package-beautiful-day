@@ -10,6 +10,7 @@
 #' @param year A numeric vector. Default value is c(2000:2015).
 #' @param plot A character for type of plot. The value is either "line" or "bar". Default value is "line". 
 #'     You can use it to decide which kind of plot you want to get. When do analysis in some specific year, you should choose "bar".
+#' @author Annie Yang    
 #' @examples
 #' aqi_healthconcern(annual_aqi,c("Aberdeen, SD","Adrian, MI"),
 #' category =c("Good","Moderate","Unhealthy"),year=c(2000,2008,2015),plot="bar")
@@ -33,7 +34,7 @@ aqi_healthconcern<-function(data=annual_aqi,cbsa,
     select(CBSA,Year,category)%>%
     filter(CBSA %in% cbsa & Year %in% year) # Calculate the percentage of each AQI category.
 
-  if(plot=="line"){
+  if(plot=="line"){ # Plot line graph to show the trend of each AQI category
     healthconcern %>%
       tidyr::gather("id", "Percentage", (ncol(healthconcern)-length(category)+1):ncol(healthconcern)) %>%
       ggplot(., aes(Year, Percentage, color=CBSA))+

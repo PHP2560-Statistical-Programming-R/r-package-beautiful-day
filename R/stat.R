@@ -3,8 +3,9 @@
 #' @description This function helps you calculate summary statistics for AQI by CBSA.
 #' @param data Dataset to use for summary statistics. The data is about the annual air quality index and other pollutants.
 #' @param cbsa A CBSA in US.
-#' @return
-#' @examples 
+#' @return Return a data frame containing statistic information: Min, first quartile, Median, Mean, third quartile, Max, 95% Confidence interval.
+#' 
+#' @examples Yiquan Xu
 #' stat_func(cbsa="Ames, IA")
 #' 
 #' @export
@@ -16,7 +17,7 @@ stat_func<-function(data=annual_aqi,cbsa){
   stat_table <- as.array(summary(data_stat$`Median AQI`))
   stat_df <- as.data.frame(stat_table)
   colnames(stat_df) <- c("Stat", "Value")
-  Confi_Interval <- CI(data_stat$`Median AQI`, ci = 0.95) #Caculate the confidence interval of Median AQI
+  Confi_Interval <- CI(data_stat$`Median AQI`, ci = 0.95) # Caculate the confidence interval of Median AQI
   lower <- data.frame('CI lower',Confi_Interval[['lower']])
   upper <- data.frame('CI upper',Confi_Interval[['upper']])
   names(lower) <- c("Stat", "Value")

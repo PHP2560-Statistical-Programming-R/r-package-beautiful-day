@@ -3,6 +3,7 @@
 #' @description This function plots temperature geographic maps for States in US in specific year
 #' @param data Dataset to use for map. The defalt dataset is GlobalLandTemperaturesByState.
 #' @param year A numeric. The map will show you the temperature in specific year.
+#' @author Annie Yang
 #' @examples
 #' temp_state(year=2012)
 #' 
@@ -51,6 +52,7 @@ print(state_choropleth(map_state,
 #' @param end A numeric. Then end year you want to do temperature comparison.
 #' @param diff A character. If diff=="TRUE", you will get a temperature geographic map showing the temperature
 #'     change from the start year to end year. (Default value is "FALSE")
+#' @author Annie Yang
 #' @examples
 #' temp_country(year=2012)
 #' temp_country(start=1990,end=2000,diff="TRUE")

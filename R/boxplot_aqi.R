@@ -6,6 +6,7 @@
 #' @param data Dataset to use for plot. The default dataset is annual_aqi.
 #' @param year A vector of years in which you want to display the distribution of AQI.
 #' @param cbsa A CBSA in US.
+#' @author Annie Yang 
 #' @examples
 #' boxplot_aqi(annual_aqi,c("2000","2005"),"Albany, GA")
 #' 

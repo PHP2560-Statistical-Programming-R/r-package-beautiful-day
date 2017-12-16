@@ -4,6 +4,7 @@
 #'     monitoring ozone and PM2.5.
 #' @param data Dataset to use for map. The default dataset is AirQuality_Tracking.
 #' @param year A numeric. The report year of the air quality data.
+#' @author Yiquan Xu
 #' @examples
 #' checkAirQuality(year=2010)
 #'
