@@ -3,11 +3,11 @@
 #' @description This function helps you calculate summary statistics for AQI by CBSA.
 #' @param data Dataset to use for summary statistics. The data is about the annual air quality index and other pollutants.
 #' @param cbsa A CBSA in US.
-#' @return Return a data frame containing statistic information: Min, first quartile, Median, Mean, third quartile, Max, 95% Confidence interval.
-#' 
-#' @examples Yiquan Xu
+#' @return Return a data frame containing statistic information.
+#' @author Yiquan Xu
+#' @examples
 #' stat_func(cbsa="Ames, IA")
-#' 
+#'
 #' @export
 
 
