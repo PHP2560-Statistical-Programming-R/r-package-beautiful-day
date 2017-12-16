@@ -8,17 +8,17 @@ health_status(data = annual_aqi, cbsa, year, smoke = 1, exercise = 1,
   gene = 1)
 }
 \arguments{
-\item{data}{a data.frame}
+\item{data}{Dataset to use for analysing health status.}
 
-\item{cbsa}{cbsa in US}
+\item{cbsa}{A CBSA in US.}
 
-\item{year}{A numeric vector. Time period during which you want to analyse the air quality.}
+\item{year}{A numeric. Year in which you want to analyse the air quality.}
 
-\item{smoke}{whether people smoke or not, equal to -1 if you smoke, else is 1. Default is 1}
+\item{smoke}{Whether people smoke or not, equal to -1 if you smoke, else is 1. Default is 1.}
 
-\item{exercise}{whether people has certain exercise every day, equal to -1 if you don't, else is 1. Default is 1}
+\item{exercise}{Whether people has certain exercise every day, equal to -1 if you don't, else is 1. Default is 1.}
 
-\item{gene}{whether people has certain gene may cause disease happen,equal to -1 for bad gene or 1 for good gene. Default is 1}
+\item{gene}{Whether people has certain gene may cause disease happen,equal to -1 for bad gene or 1 for good gene. Default is 1.}
 }
 \description{
 This function helps you to evaluate your health status

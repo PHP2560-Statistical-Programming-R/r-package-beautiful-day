@@ -8,7 +8,7 @@ temp_country(data = GlobalLandTemperaturesByCountry, year, start, end,
   diff = "FALSE")
 }
 \arguments{
-\item{data}{A data.frame. The defalt dataset is GlobalLandTemperaturesByCountry.}
+\item{data}{Dataset to use for map. The defalt dataset is GlobalLandTemperaturesByCountry.}
 
 \item{year}{A numeric. You can get temperature geographic maps for countries in this year.}
 
@@ -21,7 +21,7 @@ change from the start year to end year. (Default value is "FALSE")}
 }
 \description{
 This function plots temperature geographic maps for countries in specific year. You can use this
-    function to get a temperature geographic map showing the temperature change from the start year to end year.
+    function to get a temperature geographic map showing the temperature variation during a specific time period.
 }
 \examples{
 temp_country(year=2012)

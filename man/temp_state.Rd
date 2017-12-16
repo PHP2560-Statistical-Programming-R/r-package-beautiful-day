@@ -2,17 +2,17 @@
 % Please edit documentation in R/map_temp.R
 \name{temp_state}
 \alias{temp_state}
-\title{Plot Temperature Geographic Maps by States in USA}
+\title{Plot Temperature Geographic Maps by States in US}
 \usage{
 temp_state(data = GlobalLandTemperaturesByState, year)
 }
 \arguments{
-\item{data}{A data.frame. The defalt dataset is GlobalLandTemperaturesByState.}
+\item{data}{Dataset to use for map. The defalt dataset is GlobalLandTemperaturesByState.}
 
-\item{year}{numeric}
+\item{year}{A numeric. The map will show you the temperature in specific year.}
 }
 \description{
-This function plots temperature geographic maps for States in USA in specific year
+This function plots temperature geographic maps for States in US in specific year
 }
 \examples{
 temp_state(year=2012)

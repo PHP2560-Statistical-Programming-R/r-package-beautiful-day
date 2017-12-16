@@ -7,9 +7,9 @@
 stat_func(data = annual_aqi, cbsa)
 }
 \arguments{
-\item{data}{A data.frame. The data is about the annual air quality index and other pollutants.}
+\item{data}{Dataset to use for summary statistics. The data is about the annual air quality index and other pollutants.}
 
-\item{cbsa}{CBSA in US.}
+\item{cbsa}{A CBSA in US.}
 }
 \description{
 This function helps you calculate summary statistics for AQI by CBSA.

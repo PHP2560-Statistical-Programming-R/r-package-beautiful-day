@@ -4,16 +4,17 @@
 \alias{avg_temp}
 \title{Average Temperatures Trend}
 \usage{
-avg_temp(data, type, year, month, country, con = "FALSE")
+avg_temp(data = GlobalTemperatures, type, year, month, country,
+  con = "FALSE")
 }
 \arguments{
-\item{data}{A data.frame. Use GlobalTemperatures or GlobalLandTemperaturesByCountry dataset to do analysis.}
+\item{data}{Dataset to use for plot. Use GlobalTemperatures or GlobalLandTemperaturesByCountry dataset to do analysis.}
 
 \item{type}{A vector giving which type of trend you want to plot. 1 indicates yearly trend. 2 indicates monthly trend. c(1,2) indicates both yearly and monthly average temperature trend.}
 
 \item{year}{A vector. Time period during which you want to analyse how the temperature changed.}
 
-\item{month}{A vector. Time period during which you want to analyse how the temperature changed.}
+\item{month}{A vector. You want to analyse the temperature trend in these months.}
 
 \item{country}{A vector of countries' name. Compare how the temperature changed in these countries during a specified time period.}
 
@@ -21,11 +22,12 @@ avg_temp(data, type, year, month, country, con = "FALSE")
 }
 \description{
 This function helps you analyse global as well as countries average temperatures trend during a specified time period. 
-    You can use it to do comparison between countries.
+    You can use it to do comparison between countries. Also, you can analyse both yearly average temperature and monthly temperature trend.
 }
 \examples{
 avg_temp(data=GlobalLandTemperaturesByCountry, type=c(1,2),
-year=c(2000:2015), month=c(1:12), 
-country = c("Afghanistan","Andorra"),con="F")
+year=c(2000:2015), month=3, 
+country = c("Afghanistan","Andorra"),con="T")
+avg_temp(data=GlobalTemperatures, type=c(1,2),year=c(2000:2013),month=c(1:12))
 
 }

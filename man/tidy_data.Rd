@@ -7,11 +7,11 @@
 tidy_data(data, date, na = "F")
 }
 \arguments{
-\item{data}{a data.frame}
+\item{data}{Dataset you want to tidy.}
 
-\item{date}{a character. It is the column name of the data and this column containing dates information.}
+\item{date}{A character. It is the column name of the dataset and this column containing dates information.}
 
-\item{na}{a character, either "F" or "T". The default value is "F". If the na=="F", it will remove rows with missing values.}
+\item{na}{A character, either "F" or "T". The default value is "F". If the na=="F", it will remove rows with missing values.}
 }
 \value{
 If na = "F", it will return a data frame without NA. The column names are with only lowercase letters, with "_" as a separator.

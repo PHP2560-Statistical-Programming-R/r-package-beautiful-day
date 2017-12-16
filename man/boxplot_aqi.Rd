@@ -7,9 +7,9 @@
 boxplot_aqi(data = annual_aqi, year, cbsa)
 }
 \arguments{
-\item{data}{A data.frame. The default dataset is annual_aqi.}
+\item{data}{Dataset to use for plot. The default dataset is annual_aqi.}
 
-\item{year}{A vector, years in which you want to display the distribution of AQI.}
+\item{year}{A vector of years in which you want to display the distribution of AQI.}
 
 \item{cbsa}{A CBSA in US.}
 }

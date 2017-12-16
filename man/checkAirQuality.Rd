@@ -7,13 +7,13 @@
 checkAirQuality(data = AirQuality_Tracking, year)
 }
 \arguments{
-\item{data}{A data.frame. The default dataset is AirQuality_Tracking.}
+\item{data}{Dataset to use for map. The default dataset is AirQuality_Tracking.}
 
-\item{year}{A numeric vector. The report year of the air quality data.}
+\item{year}{A numeric. The report year of the air quality data.}
 }
 \description{
 This function gets the data from CDC, the outcome is a combination outcome of
-monitoring ozone and PM2.5.
+    monitoring ozone and PM2.5.
 }
 \examples{
 checkAirQuality(year=2010)

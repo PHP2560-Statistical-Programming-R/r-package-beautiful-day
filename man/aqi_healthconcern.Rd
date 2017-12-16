@@ -9,7 +9,7 @@ aqi_healthconcern(data = annual_aqi, cbsa, category = c("Good", "Moderate",
   year = c(2000:2015), plot = "line")
 }
 \arguments{
-\item{data}{A data.frame. The default dataset is annual_aqi.}
+\item{data}{Dataset to use for plot. The default dataset is annual_aqi.}
 
 \item{cbsa}{A vector of CBSA. You can input the CBSAs you want to compare.}
 
@@ -17,10 +17,10 @@ aqi_healthconcern(data = annual_aqi, cbsa, category = c("Good", "Moderate",
 Input category from "Good", "Moderate", "UnhealthyForSensitiveGroup", "Unhealthy", "VeryUnhealthy" and "Hazardous".
 Default value includes all six categories.}
 
-\item{year}{A numeric vector.}
+\item{year}{A numeric vector. Default value is c(2000:2015).}
 
-\item{plot}{A character. The value is either "line" or "bar".
-Default value is "line". You can use it to decide which kind of plot you want to get.}
+\item{plot}{A character for type of plot. The value is either "line" or "bar". Default value is "line". 
+You can use it to decide which kind of plot you want to get. When do analysis in some specific year, you should choose "bar".}
 }
 \description{
 There are six categories of AQI. Each category corresponds to a different level of health concern. This function
