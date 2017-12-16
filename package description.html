@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>ENVPH PACKAGE</title>
+
+<script type="text/javascript">
+window.onload = function() {
+  var imgs = document.getElementsByTagName('img'), i, img;
+  for (i = 0; i < imgs.length; i++) {
+    img = imgs[i];
+    // center an image if it is the only element of its parent
+    if (img.parentElement.childElementCount === 1)
+      img.parentElement.style.textAlign = 'center';
+  }
+};
+</script>
+
+
+
+
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 13px;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 20px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 {
+   font-size:2.2em;
+}
+
+h2 {
+   font-size:1.8em;
+}
+
+h3 {
+   font-size:1.4em;
+}
+
+h4 {
+   font-size:1.0em;
+}
+
+h5 {
+   font-size:0.9em;
+}
+
+h6 {
+   font-size:0.8em;
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre, img {
+  max-width: 100%;
+}
+pre {
+  overflow-x: auto;
+}
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code {
+  font-size: 92%;
+  border: 1px solid #ccc;
+}
+
+code[class] {
+  background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * {
+      background: transparent !important;
+      color: black !important;
+      filter:none !important;
+      -ms-filter: none !important;
+   }
+
+   body {
+      font-size:12pt;
+      max-width:100%;
+   }
+
+   a, a:visited {
+      text-decoration: underline;
+   }
+
+   hr {
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote {
+      padding-right: 1em;
+      page-break-inside: avoid;
+   }
+
+   tr, img {
+      page-break-inside: avoid;
+   }
+
+   img {
+      max-width: 100% !important;
+   }
+
+   @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+   }
+
+   @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+   }
+
+   p, h2, h3 {
+      orphans: 3; widows: 3;
+   }
+
+   h2, h3 {
+      page-break-after: avoid;
+   }
+}
+</style>
+
+
+
+</head>
+
+<body>
+<h1>ENVPH PACKAGE</h1>
+
+<p>Authors: Annie Yang; Yiquan Xu</p>
+
+<h2>THE IDEA OF OUR PACKAGE</h2>
+
+<p>Use our package to tidy environment and health data (air, climate/temperature, water, forest, waste).
+The default dataset in our package are about global temperature, annual AQI and AQI by pollutant.</p>
+
+<p>Extract useful information (statistic) from the raw data. </p>
+
+<p>Visualize the environment data: horizontal comparison (among countries/states/cities) and vertical comparison (time series). Making AQI and Temperature Map.</p>
+
+<p>Take into environment factors and evaluate your health status.</p>
+
+<h2>DATA AND INFORMATION RESOURCE</h2>
+
+<p><a href="https://data.oecd.org/environment.htm">OECD Data</a></p>
+
+<p><a href="https://aqsdr1.epa.gov/aqsweb/aqstmp/airdata/download_files.html">EPA</a></p>
+
+<p><a href="https://edg.epa.gov/metadata/catalog/main/home.page">Environmental Dataset Gateway</a></p>
+
+<p><a href="http://berkeleyearth.org/">Berkeleyearth</a></p>
+
+<p><a href="https://www.healthdata.gov/search/type/dataset">Healthdata.gov</a></p>
+
+<h2>GLOSSARY</h2>
+
+<p><a href="https://en.wikipedia.org/wiki/Air_quality_index">AQI</a>: An air quality index (AQI) is a number used by government agencies to communicate to the public how polluted the air currently is or how polluted it is forecast to become. </p>
+
+<p><a href="https://cfpub.epa.gov/airnow/index.cfm?action=aqibasics.aqi">AQI levels of Health concern</a></p>
+
+<p><a href="https://en.wikipedia.org/wiki/Core-based_statistical_area">CBSA</a>: Core-based statistical area</p>
+
+<h2>FUNCTIONS IN THE PACKAGE</h2>
+
+<h3>1. INCLUDING DATASETS</h3>
+
+<p>Include example datasets in R package: annual_aqi, GlobalTemperatures, GlobalLandTemperaturesByCountry,
+GlobalLandTemperaturesByState, pollution_us, AirQuality_Tracking.</p>
+
+<h3>2. MANIPULATION</h3>
+
+<p>Function: tidy_data</p>
+
+<p>The function can be used to tidy environment data and make the clean dataset more convenient to be used for analysis and visualization. The function can deal with missing value to make the raw data in a good shape to work on.</p>
+
+<h3>3. SUMMARY STATISTICS</h3>
+
+<p>Function: stat_func</p>
+
+<p>Return a data frame containing statistic information about the Min, first quartile, Median, Mean, third quartile, Max, 95% Confidence interval.</p>
+
+<h3>4. BOX PLOT</h3>
+
+<p>Function: boxplot_aqi</p>
+
+<p>Draw the box plot. This function can take the CBSA name, and mark the data of this area on the box plot.</p>
+
+<h3>5. VERTICAL COMPARISON - PLOT TRENDS OF DATA (TIME SERIES)</h3>
+
+<p>Function: avg_temp</p>
+
+<p>The function can calculate the average global temperature (also temperature by country) in the state and plot the trend of the average temperature and the 95% confidence interval of the average temperature.</p>
+
+<p>Function: aqi_healthconcern</p>
+
+<p>The function can plot the trend of each AQI level of health concern.</p>
+
+<p>Function: trend_aqi</p>
+
+<p>The function plot time series graph by pollutant (NO2, O3, SO2, CO). </p>
+
+<h3>6. HORIZONTAL COMPARISON</h3>
+
+<p>Function: avg_temp</p>
+
+<p>You can use this function to compare temperature trend in different countries.</p>
+
+<p>Function: aqi_healthconcern</p>
+
+<p>You can use this function to compare AQI levels trend by CBSA.</p>
+
+<p>Function: trend_aqi</p>
+
+<p>You can choose a city to analyze the pollutant trend.</p>
+
+<h3>7. Map</h3>
+
+<p>• AQI MAP: Function - checkAirQuality</p>
+
+<p>• Temperature Map: Functions - temp_country; temp_state</p>
+
+<p>Show temperature map in specific year or temperature change during a specific time period.</p>
+
+<h3>8. HEALTH STATUS EVALUATION</h3>
+
+<p>Function: health_status</p>
+
+<p>• Use AQI levels of health concern to measure the effect of AQI on health.</p>
+
+<p>• Set the initial health status value at 0. </p>
+
+<p>• Take into account the AQI, smoke, exercise and gene to measure the health status.</p>
+
+<p>• Return which kind of health status you are in. Healthy, sub healthy or unhealthy?</p>
+
+<h2>TEAM WORK</h2>
+
+<p>Annie Yang: Functions</p>
+
+<pre><code>        Tidy data - tidy_data
+
+        Box plot - boxplot_aqi
+
+        Vertical and Horizontal comparison - avg_temp; aqi_healthconcern; trend_aqi
+
+        Temperature map - temp_country; temp_state
+</code></pre>
+
+<p>Yiquan Xu: Functions</p>
+
+<pre><code>       Summary statistics - stat_func
+
+       AQI map - checkAirQuality
+
+       Health status evaluation - health_status
+</code></pre>
+
+<p>Annie Yang and Yiquan Xu: Collect and import dataset into our package</p>
+
+</body>
+
+</html>
