@@ -12,7 +12,7 @@ health_status(data = annual_aqi, cbsa, year, smoke = 1, exercise = 1,
 
 \item{cbsa}{A CBSA in US.}
 
-\item{year}{A numeric. Year in which you want to analyse the air quality.}
+\item{year}{A numeric. Year in which you want to analyze the air quality.}
 
 \item{smoke}{Whether people smoke or not, equal to -1 if you smoke, else is 1. Default is 1.}
 

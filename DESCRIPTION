@@ -1,11 +1,11 @@
 Package: envph
 Type: Package
-Title: Analyse Environment Data
+Title: Analyze Environment Data
 Version: 0.1.1
 Date: 2017-12-15
 Author: Annie Yang, Yiquan Xu
 Maintainer: Annie Yang <yangxiaofei0413@gmail.edu>
-Description: Tools to analyse and visualize environment and health data.
+Description: Tools to analyze and visualize environment and health data.
 License: MIT
 Encoding: UTF-8
 LazyData: true

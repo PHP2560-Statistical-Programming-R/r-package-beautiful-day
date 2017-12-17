@@ -18,7 +18,7 @@ If na = "F", it will return a data frame without NA. The column names are with o
 }
 \description{
 This function helps you tidy environment dataset, deal with the dates information, converts dates
-    to Date class and create new column "Month" and "Year" to help you analyse the data.The column names are 
+    to Date class and create new column "Month" and "Year" to help you analyze the data.The column names are 
     with only lowercase letters, with "_" as a separator.
 }
 \examples{

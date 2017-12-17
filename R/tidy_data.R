@@ -1,7 +1,7 @@
 #' @title Tidy Environment Dataset
 #'
 #' @description This function helps you tidy environment dataset, deal with the dates information, converts dates
-#'     to Date class and create new column "Month" and "Year" to help you analyse the data.The column names are 
+#'     to Date class and create new column "Month" and "Year" to help you analyze the data.The column names are 
 #'     with only lowercase letters, with "_" as a separator.
 #' @param data Dataset you want to tidy.
 #' @param date A character. It is the column name of the dataset and this column containing dates information.
