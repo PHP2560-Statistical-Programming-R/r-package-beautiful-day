@@ -14,11 +14,11 @@ Depends:
   ggplot2 (>= 2.2.1),
   dplyr (>= 0.7.4),
   ggpubr (>= 0.1.3),
-  choroplethr,
-  choroplethrMaps,
-  plotly,
-  countrycode,
-  Rmisc
+  choroplethr (>= 3.6.1),
+  choroplethrMaps (>= 1.0.1),
+  plotly (>= 4.7.1),
+  countrycode (>= 0.19),
+  Rmisc (>= 1.5)
 Suggests:
   XML,
   rvest
